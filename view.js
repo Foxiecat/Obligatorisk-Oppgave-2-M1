@@ -14,9 +14,9 @@ function show() {
                 <br />
                 Verdi:
                 <input type="number" min="1" max="10" oninput="inputValue = this.value" />
-                <button>Legg til stolpe</button>
-                <button disabled>Endre valgt stolpe</button><br />
-                <button onclick="DeleteBar()">Fjerne valgt stolpe</button>
+                <button onclick="AddBar(inputValue)">Legg til stolpe</button>
+                <button onclick="ChangeBar(inputValue)">Endre valgt stolpe</button><br />
+                <button onclick="DeleteBar()" disabled>Fjerne valgt stolpe</button>
                 `;
 }
 
