@@ -1,12 +1,14 @@
 // JavaScript source code
 
 show();
-function show() {
+function show()
+{
     let svgInnerHtml = '';
     for (let i = 0; i < numbers.length; i++) {
         svgInnerHtml += createBar(numbers[i], i + 1);
     }
-    if(!chosenBar){
+    if (!chosenBar)
+    {
     contentDiv.innerHTML = 
         `<svg id="chart" width="500" viewBox="0 0 80 60" >
         ${svgInnerHtml}
@@ -19,7 +21,9 @@ function show() {
         <button onclick="ChangeBar(inputValue)" disabled>Endre valgt stolpe</button><br />
         <button onclick="DeleteBar()" disabled>Fjerne valgt stolpe</button>`;
     }
-    else if (chosenBar)  { 
+    
+    else if (chosenBar)
+    { 
         contentDiv.innerHTML = `
         <svg id="chart" width="500" viewBox="0 0 80 60" >
         ${svgInnerHtml}
@@ -34,7 +38,8 @@ function show() {
     }
 }
 
-function createBar(number, barNo) {
+function createBar(number, barNo)
+{
     const width = 8;
     const spacing = 2;
     let x = (barNo - 1) * (width + spacing);
@@ -56,7 +61,8 @@ function createBar(number, barNo) {
     }
 }
 
-function calcColor(min, max, val) {
+function calcColor(min, max, val)
+{
     var minHue = 240, maxHue = 0;
     var curPercent = (val - min) / (max - min);
     var colString = "hsl(" + ((curPercent * (maxHue - minHue)) + minHue) + ",100%,50%)";

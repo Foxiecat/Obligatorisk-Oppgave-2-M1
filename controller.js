@@ -1,22 +1,26 @@
-function ChooseBar (barNo) {
+function ChooseBar (barNo)
+{
     if (chosenBar == barNo) { chosenBar = null; }
     else { chosenBar = barNo; }
     show();
 }
 
-function AddBar(inputValue) {
+function AddBar(inputValue)
+{
     if(inputValue > 0 && inputValue <= 10) { numbers.push(inputValue); }
 
     else { alert("Choose a number between 1 and 10"); }
     show();
 }
 
-function DeleteBar() {
+function DeleteBar()
+{
     if (chosenBar) { numbers.splice(chosenBar-1, 1); }
     show();
 }
 
-function ChangeBar(inputValue) {
+function ChangeBar(inputValue)
+{
     aNumber = chosenBar - 1;
     if(inputValue > 0 && inputValue <= 10) {numbers[aNumber] = inputValue;}
     else if (!chosenBar) { alert("Please select a bar") }
