@@ -17,6 +17,42 @@
     <script src="Model.js"></script>
     <script src="view.js"></script>
     <script src="controller.js"></script>
+    <script>
+
+        QUnit.test("AddBar", function(assert) {
+            numbers=[7,3,1,5,8];
+            AddBar(6);
+            let expectedResult = [7,3,1,5,8,6];
+            assert.deepEqual(numbers, expectedResult);
+        });
+
+        QUnit.test("DeleteBar", function(assert) {
+            numbers=[7,3,1,5,8];
+            DeleteBar(1);
+            let expected = [3,1,5,8];
+            assert.deepEqual(numbers, expected);
+        });
+
+        QUnit.test("ChangeBar", function(assert) {
+            numbers=[7,3,1,5,8];
+            ChangeBar(3,1)
+            let expected = [3,3,1,5,8];
+            assert.deepEqual(numbers, expected);
+        });
+
+        QUnit.test("2nd bar chosen", function(assert){
+            barNo = 2;
+            ChooseBar(barNo);
+            let expected = (2)
+            assert.deepEqual(barNo, expected);
+        });
+        QUnit.test("3rd bar chosen", function(assert){
+            barNo = 3;
+            ChooseBar(barNo);
+            let expected = (3);
+            assert.deepEqual(barNo, expected);
+        });
+    </script>
 
 
 </body>

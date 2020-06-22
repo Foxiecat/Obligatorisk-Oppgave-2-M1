@@ -6,18 +6,32 @@ function show() {
     for (let i = 0; i < numbers.length; i++) {
         svgInnerHtml += createBar(numbers[i], i + 1);
     }
-    contentDiv.innerHTML = `
-                <svg id="chart" width="500" viewBox="0 0 80 60" >
-                    ${svgInnerHtml}
-                </svg><br/>
-                Valgt stolpe: ${chosenBar}
-                <br />
-                Verdi:
-                <input type="number" min="1" max="10" oninput="inputValue = this.value" />
-                <button onclick="AddBar(inputValue)">Legg til stolpe</button>
-                <button onclick="ChangeBar(inputValue)">Endre valgt stolpe</button><br />
-                <button onclick="DeleteBar()" disabled>Fjerne valgt stolpe</button>
-                `;
+    if(!chosenBar){
+    contentDiv.innerHTML = 
+        `<svg id="chart" width="500" viewBox="0 0 80 60" >
+        ${svgInnerHtml}
+        </svg><br/>
+        Valgt stolpe: ${chosenBar}
+        <br />
+        Verdi:
+        <input type="number" min="1" max="10" oninput="inputValue = this.value" />
+        <button onclick="AddBar(inputValue)">Legg til stolpe</button>
+        <button onclick="ChangeBar(inputValue)" disabled>Endre valgt stolpe</button><br />
+        <button onclick="DeleteBar()" disabled>Fjerne valgt stolpe</button>`;
+    }
+    else if (chosenBar)  { 
+        contentDiv.innerHTML = `
+        <svg id="chart" width="500" viewBox="0 0 80 60" >
+        ${svgInnerHtml}
+        </svg><br/>
+        Valgt stolpe: ${chosenBar}
+        <br />
+        Verdi:
+        <input type="number" min="1" max="10" oninput="inputValue = this.value" />
+        <button onclick="AddBar(inputValue)">Legg til stolpe</button>
+        <button onclick="ChangeBar(inputValue)">Endre valgt stolpe</button><br />
+        <button onclick="DeleteBar()">Fjerne valgt stolpe</button>`;
+    }
 }
 
 function createBar(number, barNo) {
