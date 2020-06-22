@@ -1,13 +1,10 @@
 
 //Create bar functions
-function ChooseBar(barNo) {
+function ChooseBar (barNo) {
     //Select the bar, add stroke and update "Valgt stolpe"
     if (chosenBar == barNo) { chosenBar = null; }
     else { chosenBar = barNo; }
     show();
-
-    //Unselect the same bar, disable stroke and remove "valgt stolpe"
-
 }
 function Addbar() {
     //use push to add bar
