@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width">
     <title>QUnit Example</title>
     <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.10.0.css">
+    <div id="content" hidden>
+    </div>
 </head>
 <body>
-    <div id="content">
-    </div>
-    <br />
+    
 
     <div id="qunit"></div>
     <div id="qunit-fixture"></div>
@@ -35,7 +35,7 @@
 
         QUnit.test("ChangeBar", function(assert) {
             numbers=[7,3,1,5,8];
-            ChangeBar(3,1)
+            ChangeBar(3,1);
             let expected = [3,3,1,5,8];
             assert.deepEqual(numbers, expected);
         });

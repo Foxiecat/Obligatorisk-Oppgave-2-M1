@@ -13,17 +13,18 @@ function AddBar(inputValue)
     show();
 }
 
-function DeleteBar()
+function DeleteBar(chosenBar)
 {
-    if (chosenBar) { numbers.splice(chosenBar-1, 1); }
+    if(chosenBar) { numbers.splice(chosenBar -1, 1); }
     show();
+    ChooseBar();
 }
 
-function ChangeBar(inputValue)
+function ChangeBar(inputValue, chosenBar)
 {
     aNumber = chosenBar - 1;
     if(inputValue > 0 && inputValue <= 10) {numbers[aNumber] = inputValue;}
-    else if (!chosenBar) { alert("Please select a bar") }
-    else { alert("Only a number between 1 and 10"); }
+    else { alert("Please use a number between 1 and 10."); }
     show();
+    ChooseBar();
 }
