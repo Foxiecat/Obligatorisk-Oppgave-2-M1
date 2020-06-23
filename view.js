@@ -10,7 +10,7 @@ function show()
     if (!chosenBar)
     {
     contentDiv.innerHTML = 
-        `<svg id="chart" width="500" viewBox="0 0 80 60" >
+        `<svg id="chart" height="650" width="500" viewBox="0 -20 80 60" >
         ${svgInnerHtml}
         </svg><br/>
         Valgt stolpe: ${chosenBar}
@@ -18,14 +18,14 @@ function show()
         Verdi:
         <input type="number" min="1" max="10" oninput="inputValue = this.value" />
         <button onclick="AddBar(inputValue)">Legg til stolpe</button>
-        <button onclick="ChangeBar(inputValue)" disabled>Endre valgt stolpe</button><br />
-        <button onclick="DeleteBar()" disabled>Fjerne valgt stolpe</button>`;
+        <button onclick="ChangeBar(inputValue, chosenBar)" disabled>Endre valgt stolpe</button><br />
+        <button onclick="DeleteBar(chosenBar)" disabled>Fjerne valgt stolpe</button>`;
     }
     
     else if (chosenBar)
     { 
         contentDiv.innerHTML = `
-        <svg id="chart" width="500" viewBox="0 0 80 60" >
+        <svg id="chart" height="650" width="500" viewBox="0 -20 80 60" >
         ${svgInnerHtml}
         </svg><br/>
         Valgt stolpe: ${chosenBar}
