@@ -17,7 +17,6 @@ function DeleteBar(chosenBar)
 {
     if(chosenBar) { numbers.splice(chosenBar -1, 1); }
     show();
-    ChooseBar();
 }
 
 function ChangeBar(inputValue, chosenBar)
@@ -26,5 +25,4 @@ function ChangeBar(inputValue, chosenBar)
     if(inputValue > 0 && inputValue <= 10) {numbers[aNumber] = inputValue;}
     else { alert("Please use a number between 1 and 10."); }
     show();
-    ChooseBar();
 }
